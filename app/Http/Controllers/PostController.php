@@ -19,6 +19,13 @@ class PostController extends Controller
         'empresa' => $request->get('empresa')
       ]);
 
+      $request->validate([
+        'descricao' => 'required|max:255',
+        'apresentacao' => 'required|max:255',
+        'nomePrincipioAtivo' => 'required|max:255',
+        'empresa' => 'required|max:255',
+    ]);
+
       $post->save();
 
       return response()->json('Registrado com sucesso!');
@@ -47,7 +54,7 @@ class PostController extends Controller
     public function delete($id)
     {
       $post = Post::find($id);
-
+      
       $post->delete();
 
       return response()->json('Registro excluído!');

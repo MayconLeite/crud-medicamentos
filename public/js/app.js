@@ -2173,6 +2173,8 @@ __webpack_require__.r(__webpack_exports__);
       var uri = "/api/post/delete/".concat(id);
       this.axios["delete"](uri).then(function (response) {
         _this2.posts.splice(_this2.posts.indexOf(id), 1);
+
+        _this2.posts = response.data.data;
       });
     }
   }
@@ -38240,7 +38242,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", required: "" },
+                attrs: {
+                  type: "text",
+                  placeholder: "EX: cloridrato de ciclobenzaprina",
+                  required: ""
+                },
                 domProps: { value: _vm.post.descricao },
                 on: {
                   input: function($event) {
@@ -38270,7 +38276,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", required: "" },
+                attrs: {
+                  type: "text",
+                  placeholder: "EX: 5 mg c/ 30 comprimidos",
+                  required: ""
+                },
                 domProps: { value: _vm.post.apresentacao },
                 on: {
                   input: function($event) {
@@ -38300,7 +38310,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", required: "" },
+                attrs: {
+                  type: "text",
+                  placeholder: "EX: Cafeína + Paracetamol",
+                  required: ""
+                },
                 domProps: { value: _vm.post.nomePrincipioAtivo },
                 on: {
                   input: function($event) {
@@ -38334,7 +38348,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", required: "" },
+                attrs: { type: "text", placeholder: "EX: Pfizer" },
                 domProps: { value: _vm.post.empresa },
                 on: {
                   input: function($event) {
@@ -38392,7 +38406,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c("button", { staticClass: "btn btn-primary" }, [
-        _c("b", [_vm._v("REGISTRAR:")])
+        _c("b", [_vm._v("REGISTRAR")])
       ])
     ])
   }
