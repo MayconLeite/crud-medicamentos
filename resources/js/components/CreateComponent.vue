@@ -24,7 +24,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label><b>NOME PRINCÍPIO ATIVO</b></label>
-            <input type="text" class="form-control" v-model="post.nomePrincipioAtivo" placeholder="EX: Cafeína + Paracetamol"required>
+            <input type="text" class="form-control" v-model="post.nomePrincipioAtivo" placeholder="EX: Cafeína + Paracetamol" required>
           </div>
         </div>
         </div>
@@ -56,7 +56,7 @@
         console.log(this.post);
         let uri = '/api/post/create';
         this.axios.post(uri, this.post).then((response) => {
-        this.$router.push({name: 'posts'});
+        this.$router.push({name: 'posts'})
         });
       }
     }

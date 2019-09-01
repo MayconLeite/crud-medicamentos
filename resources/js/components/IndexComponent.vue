@@ -53,7 +53,6 @@
         let uri = `/api/post/delete/${id}`;
         this.axios.delete(uri).then(response => {
         this.posts.splice(this.posts.indexOf(id), 1);
-        this.posts = response.data.data;
         });
       }
     }

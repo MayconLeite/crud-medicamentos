@@ -2173,8 +2173,6 @@ __webpack_require__.r(__webpack_exports__);
       var uri = "/api/post/delete/".concat(id);
       this.axios["delete"](uri).then(function (response) {
         _this2.posts.splice(_this2.posts.indexOf(id), 1);
-
-        _this2.posts = response.data.data;
       });
     }
   }
